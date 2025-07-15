@@ -1,0 +1,31 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+numReplicas = 1
+sleepApplication = false
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[env]
+DATABASE_TYPE = "sqlite"
+SQLITE_DATABASE = "gemini_balance.db"
+BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
+TEST_MODEL = "gemini-1.5-flash"
+TOOLS_CODE_EXECUTION_ENABLED = "false"
+SHOW_SEARCH_LINK = "true"
+SHOW_THINKING_PROCESS = "true"
+URL_NORMALIZATION_ENABLED = "false"
+MAX_FAILURES = "3"
+MAX_RETRIES = "3"
+CHECK_INTERVAL_HOURS = "1"
+TIME_OUT = "300"
+LOG_LEVEL = "INFO"
+AUTO_DELETE_ERROR_LOGS_ENABLED = "true"
+AUTO_DELETE_ERROR_LOGS_DAYS = "7"
+AUTO_DELETE_REQUEST_LOGS_ENABLED = "false"
+AUTO_DELETE_REQUEST_LOGS_DAYS = "30"
+IMAGE_MODELS = '["gemini-2.0-flash-exp", "gemini-2.5-pro"]'
+SEARCH_MODELS = '["gemini-2.0-flash-exp", "gemini-2.5-pro"]'
+FILTERED_MODELS = '["gemini-1.0-pro-vision-latest"]'
